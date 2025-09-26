@@ -1,164 +1,763 @@
 
-<!DOCTYPE html>
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <style>
+                body {
+                  background-color: white; /* Ensure the iframe has a white background */
+                }
+    
+                
+              </style>
+                        </head>
+                        <body>
+                            <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="utf-8" />
-<title>Название сайта</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио Разработчика | Алексей Иванов</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--light-gray);
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text h1 span {
+            color: var(--primary);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 6rem;
+            font-weight: bold;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .section-title .divider {
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .skill-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--light-gray);
+            border-radius: 4px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background: var(--light-gray);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            color: #94a3b8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero-content,
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+
+            .btn-group {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-<!--Создаём таблицу контейнер, которой задаём следующее
-оформление:
-border="1" - рамка вокруг контейнера. Увеличив число, можно увеличить толщину рамки.
-align="center" - размещаем контейнер по центру экрана.
-rules="rows" - убираем двойную рамку.
-style="width:60%;" - добавляем стилевое свойства, делающее
-контейнер и весь сайт "резиновым".
-Сделать полноценный адаптивный дизайн, этим способом невозможно.-->
-<table
-border="1"
-align="center"
-rules="rows"
-style="width:60%;">
-<!--Создаём строку-->
-<tr>
-<!--Создаём ячейку строки-->
-<td>
-<!--ШАПКА САЙТА-->
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">AlexDev</a>
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="nav-links" id="navLinks">
+                    <a href="#about">Обо мне</a>
+                    <a href="#skills">Навыки</a>
+                    <a href="#projects">Проекты</a>
+                    <a href="#contact">Контакты</a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-<!--В ячейке строки создаём ещё одну таблицу для шапки сайта.
-Оформление:
-border="1" - двойная рамка толщиной в 1px
-background="images/168.png" - картинка в шапке сайта, если требуется.
-Адрес картинки вы должны вставить свой.
-bgcolor="#7FFFD4" - фоновый цвет в шапке, если нет картинки.
-cellpadding="10" - отступ содержимого от рамки не менее 10px.
-style="width:100%; border-radius:5px;" - добавляем "резиновость"
-и закругляем уголки рамки-->
-<table
-border="1"
-background="images/168.png"
-bgcolor="#7FFFD4"
-cellpadding="10"
-style="width:100%; border-radius:5px;">
-<!--Создаём строку таблицы-->
-<tr>
-<!--Создаём столбец таблицы-->
-<th>
-<!--Содержание ячейки столбца-->
-<h1>Название сайта (организации)</h1>
-<h3>Описание сайта</h3>
-<!--Закрываем таблицу-->
-</th>
-</tr>
-</table>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Привет! Я <span>Алексей</span><br>Frontend разработчик</h1>
+                    <p>Создаю современные, адаптивные и быстрые веб-приложения с использованием последних технологий и лучших практик разработки.</p>
+                    <div class="btn-group">
+                        <a href="#projects" class="btn btn-primary">Мои проекты</a>
+                        <a href="#contact" class="btn btn-outline">Связаться</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-img">AI</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!--ОСНОВНОЙ КОНТЕНТ-->
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Обо мне</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Я passionate frontend разработчик с 4-летним опытом создания веб-приложений. Моя специализация — React и современный JavaScript, но я также хорошо разбираюсь в полном стеке разработки.</p>
+                    <p>Люблю решать сложные задачи, создавать интуитивно понятные интерфейсы и постоянно учиться новому. В свободное время участвую в open-source проектах и пишу технические статьи.</p>
+                    <p>Мои работы сочетают в себе функциональность, производительность и эстетику. Я верю, что хороший код должен быть не только рабочим, но и красивым.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://placehold.co/400x500/e2e8f0/64748b?text=About+Me" alt="About me" style="width: 100%; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!--В этой же ячейке контейнера создаём ещё одну таблицу
-для основного контента.
-Оформление как и в предыдущей таблице-->
+    <!-- Skills Section -->
+    <section id="skills" style="background: #f1f5f9;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Навыки</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h3>React & Next.js</h3>
+                        <p>Создание современных SPA и SSR приложений</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h3>JavaScript/TypeScript</h3>
+                        <p>Чистый, поддерживаемый и эффективный код</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h3>UI/UX Design</h3>
+                        <p>Создание интуитивных и красивых интерфейсов</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h3>Node.js & MongoDB</h3>
+                        <p>Backend разработка и работа с базами данных</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<table
-border="1"
-bgcolor="#e6e6fa"
-cellpadding="10"
-style="width:100%; border-radius:5px;">
-<!--Создаём строку-->
-<tr>
-<!--Создаём ячейку
-Оформление:
-rowspan="2" - объединяем две ячейки в одну.
-Число объединяемых ячеек по числу ячеек в сайдбаре.
-style="width:80%" - основной контент занимает 80% всей площади,
-оставшиеся 20% для сайдбара-->
-<td
-rowspan="2"
-style="width:80%">
-<h2>Страница</h2>
-<!--Начинаем абзац с красной строки-->
-<p style="text-indent:20px">
-Здравствуйте уважаемые будущие веб-мастера!
-Мне 55 лет и я рад приветствовать Вас на своём сайте.
-Этот сайт первый, который я разработал самостоятельно,
-а до этого умел только входить в интернет.</p>
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Проекты</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">E-Commerce</div>
+                    <div class="project-info">
+                        <h3>Платформа электронной коммерции</h3>
+                        <p>Полнофункциональная платформа для онлайн-торговли с системой платежей и админкой.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Stripe</span>
+                        </div>
+                        <a href="#" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">
+                            <i class="fas fa-external-link-alt"></i> Посмотреть
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">Task App</div>
+                    <div class="project-info">
+                        <h3>Менеджер задач</h3>
+                        <p>Коллаборативное приложение для управления задачами с реальным временем обновлений.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Tailwind</span>
+                        </div>
+                        <a href="#" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">
+                            <i class="fas fa-external-link-alt"></i> Посмотреть
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">Weather</div>
+                    <div class="project-info">
+                        <h3>Погодный дашборд</h3>
+                        <p>Красивый дашборд погоды с прогнозами и картами на основе местоположения.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Weather API</span>
+                            <span class="tech-tag">Chart.js</span>
+                        </div>
+                        <a href="#" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">
+                            <i class="fas fa-external-link-alt"></i> Посмотреть
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<p style="text-indent:20px">Почему я решил его сделать?
-За те 3 месяца, пока разбирался в
-сайтостроении и создавал этот ресурс обнаружилось,
-что авторы руководств по созданию
-сайтов считают многие нюансы само собой разумеющимися
-и не обращают на них внимание
-А мне, учитывая возраст и «опыт», было не просто
-понять как раз эти нюансы, они отнимали больше всего
-времени.</p>
-<!--Закрываем ячейку-->
-</td>
+    <!-- Contact Section -->
+    <section id="contact" style="background: #f1f5f9;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Контакты</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Свяжитесь со мной</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>alex@example.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Телефон</h4>
+                                <p>+7 (999) 123-45-67</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Локация</h4>
+                                <p>Москва, Россия</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Ваш email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Тема сообщения">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Ваше сообщение" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить сообщение</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!--САЙДБАР-->
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Алексей Иванов. Все права защищены.</p>
+        </div>
+    </footer>
 
-<!--Создаём ячейку сайдбара-->
-<td bgcolor="#e6e6fa">
-<h3>Меню</h3>
-<!--Абзац для ссылки на страницу сайта-->
-<p>
-<!--Ссылка на страницу сайта-->
-<a href="">
-<!--Картинка маркера перед названием страницы-->
-<img src="http://trueimages.ru/img/00/06/f4fffdb5.png">
-<!--Название страницы
-style="margin-left:5px;" - отступ названия от маркера-->
-<span style="margin-left:5px;">Страница</span></a>
-<!--Закрываем абзац-->
-</p>
-<p>
-<a href="">
-<img src="http://trueimages.ru/img/31/ab/4dcb087c2ae4305edcd15171696.jpg">
-<span style="margin-left:5px;">Страница 1</span;></a>
-</p>
-<p>
-<a href="">
-<img src="http://trueimages.ru/img/31/ab/4dcb087c2ae4305edcd15171696.jpg">
-<span style="margin-left:5px;">Страница 2</span></a>
-</p>
-<!--Закрываем строку Меню-->
-</td>
-</tr>
-<!--Создаём строку с дополнительной информацией-->
-<tr>
-<!--Ячейка с дополнительной информацией-->
-<td
-bgcolor="#e6e6fa"
-align="center">
-<h3>Общая информация</h3>
-<p>Текст общей информации или реклама</p>
-<!--Закрываем ячейку с общей информацией
-и таблицу основного контента-->
-</td>
-</tr>
-</table>
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
 
-<!--ПОДВАЛ-->
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
 
-<!--Создаём таблицу подвала-->
-<table
-border="1"
-bgcolor="#7FFFD4"
-height="100"
-cellpadding="10"
-style="width:100%; border-radius:5px;">
-<!--Создаём строку.-->
-<tr>
-<!--Создаём столбец-->
-<th>
-<h3>Подвал</h3>
-<!--Закрываем таблицу подвала. При желании в подвале можно
-сделать несколько строк и столбцов-->
-</th>
-</tr>
-</table>
-<!--Закрываем таблицу контейнера-->
-</td>
-</tr>
-</table>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+
+
+    
+              <script>
+                              
+              </script>
+                        </body>
+                        </html>
+                    
