@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио Разработчика</title>
+    <title>Портфолио Разработчика | Алексей Иванов</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="navbar">
             <div class="logo">AlexDev</div>
             <ul class="nav-links">
                 <li><a href="#about">Обо мне</a></li>
@@ -15,28 +17,36 @@
                 <li><a href="#projects">Проекты</a></li>
                 <li><a href="#contact">Контакты</a></li>
             </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Привет! Я Алексей<br>Frontend разработчик</h1>
-                <p>Создаю современные, адаптивные и быстрые веб-приложения с использованием последних технологий и лучших практик разработки.</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn-primary">Мои проекты</a>
-                    <a href="#contact" class="btn-outline">Связаться</a>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Привет! Я <span>Алексей</span><br>Frontend разработчик</h1>
+                    <p>Создаю современные, адаптивные и быстрые веб-приложения с использованием последних технологий и лучших практик разработки.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">Мои проекты</a>
+                        <a href="#contact" class="btn btn-outline">Связаться</a>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-image">
-                <div class="profile-placeholder">AI</div>
+                <div class="hero-image">
+                    <div class="profile-placeholder">AI</div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="about" class="about">
         <div class="container">
-            <h2>Обо мне</h2>
+            <div class="section-title">
+                <h2>Обо мне</h2>
+                <div class="divider"></div>
+            </div>
             <div class="about-content">
                 <div class="about-text">
                     <p>Я passionate frontend разработчик с 4-летним опытом создания веб-приложений. Моя специализация — React и современный JavaScript, но я также хорошо разбираюсь в полном стеке разработки.</p>
@@ -44,7 +54,7 @@
                     <p>Мои работы сочетают в себе функциональность, производительность и эстетику. Я верю, что хороший код должен быть не только рабочим, но и красивым.</p>
                 </div>
                 <div class="about-image">
-                    <img src="about-image.jpg" alt="Обо мне">
+                    <img src="https://placehold.co/400x500/e2e8f0/64748b?text=About+Me" alt="Обо мне">
                 </div>
             </div>
         </div>
@@ -52,27 +62,58 @@
 
     <section id="skills" class="skills">
         <div class="container">
-            <h2>Навыки</h2>
+            <div class="section-title">
+                <h2>Навыки</h2>
+                <div class="divider"></div>
+            </div>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>React & Next.js</h3>
-                    <p>Создание современных SPA и SSR приложений</p>
-                    <div class="skill-level">90%</div>
+                    <div class="skill-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h3>React & Next.js</h3>
+                        <p>Создание современных SPA и SSR приложений</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <h3>JavaScript/TypeScript</h3>
-                    <p>Чистый, поддерживаемый и эффективный код</p>
-                    <div class="skill-level">95%</div>
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h3>JavaScript/TypeScript</h3>
+                        <p>Чистый, поддерживаемый и эффективный код</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%;"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <h3>UI/UX Design</h3>
-                    <p>Создание интуитивных и красивых интерфейсов</p>
-                    <div class="skill-level">80%</div>
+                    <div class="skill-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h3>UI/UX Design</h3>
+                        <p>Создание интуитивных и красивых интерфейсов</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <h3>Node.js & MongoDB</h3>
-                    <p>Backend разработка и работа с базами данных</p>
-                    <div class="skill-level">75%</div>
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h3>Node.js & MongoDB</h3>
+                        <p>Backend разработка и работа с базами данных</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -80,41 +121,50 @@
 
     <section id="projects" class="projects">
         <div class="container">
-            <h2>Проекты</h2>
+            <div class="section-title">
+                <h2>Проекты</h2>
+                <div class="divider"></div>
+            </div>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">E-Commerce</div>
-                    <h3>Платформа электронной коммерции</h3>
-                    <p>Полнофункциональная платформа для онлайн-торговли с системой платежей и админкой.</p>
-                    <div class="project-tech">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>MongoDB</span>
-                        <span>Stripe</span>
+                    <div class="project-info">
+                        <h3>Платформа электронной коммерции</h3>
+                        <p>Полнофункциональная платформа для онлайн-торговли с системой платежей и админкой.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Stripe</span>
+                        </div>
+                        <a href="#" class="project-link">Посмотреть проект</a>
                     </div>
-                    <a href="#">Посмотреть проект</a>
                 </div>
                 <div class="project-card">
                     <div class="project-image">Task App</div>
-                    <h3>Менеджер задач</h3>
-                    <p>Коллаборативное приложение для управления задачами с реальным временем обновлений.</p>
-                    <div class="project-tech">
-                        <span>Vue.js</span>
-                        <span>Firebase</span>
-                        <span>Tailwind</span>
+                    <div class="project-info">
+                        <h3>Менеджер задач</h3>
+                        <p>Коллаборативное приложение для управления задачами с реальным временем обновлений.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Tailwind</span>
+                        </div>
+                        <a href="#" class="project-link">Посмотреть проект</a>
                     </div>
-                    <a href="#">Посмотреть проект</a>
                 </div>
                 <div class="project-card">
                     <div class="project-image">Weather</div>
-                    <h3>Погодный дашборд</h3>
-                    <p>Красивый дашборд погоды с прогнозами и картами на основе местоположения.</p>
-                    <div class="project-tech">
-                        <span>React</span>
-                        <span>Weather API</span>
-                        <span>Chart.js</span>
+                    <div class="project-info">
+                        <h3>Погодный дашборд</h3>
+                        <p>Красивый дашборд погоды с прогнозами и картами на основе местоположения.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Weather API</span>
+                            <span class="tech-tag">Chart.js</span>
+                        </div>
+                        <a href="#" class="project-link">Посмотреть проект</a>
                     </div>
-                    <a href="#">Посмотреть проект</a>
                 </div>
             </div>
         </div>
@@ -122,36 +172,72 @@
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Контакты</h2>
+            <div class="section-title">
+                <h2>Контакты</h2>
+                <div class="divider"></div>
+            </div>
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Свяжитесь со мной</h3>
-                    <div class="contact-item">
-                        <h4>Email</h4>
-                        <p>alex@example.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <h4>Телефон</h4>
-                        <p>+7 (999) 123-45-67</p>
-                    </div>
-                    <div class="contact-item">
-                        <h4>Локация</h4>
-                        <p>Москва, Россия</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>alex@example.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Телефон</h4>
+                                <p>+7 (999) 123-45-67</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Локация</h4>
+                                <p>Москва, Россия</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="social-links">
-                        <a href="#">GitHub</a>
-                        <a href="#">LinkedIn</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">Telegram</a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-telegram"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form>
-                        <input type="text" placeholder="Ваше имя" required>
-                        <input type="email" placeholder="Ваш email" required>
-                        <input type="text" placeholder="Тема сообщения">
-                        <textarea placeholder="Ваше сообщение" required></textarea>
-                        <button type="submit">Отправить сообщение</button>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Ваш email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Тема сообщения">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Ваше сообщение" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить сообщение</button>
                     </form>
                 </div>
             </div>
@@ -163,5 +249,7 @@
             <p>&copy; 2024 Алексей Иванов. Все права защищены.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
