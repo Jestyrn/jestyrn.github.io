@@ -1,9 +1,24 @@
-<!DOCTYPE html>
+
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <style>
+                body {
+                  background-color: white; /* Ensure the iframe has a white background */
+                }
+    
+                
+              </style>
+                        </head>
+                        <body>
+                            <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио Разработчика | Алексей Иванов</title>
+    <title>Портфолио Разработчика | Jestyrn</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -13,20 +28,22 @@
         }
 
         :root {
-            --primary: #4f46e5;
-            --primary-dark: #4338ca;
+            --primary: #8b5cf6;
+            --primary-dark: #7c3aed;
             --secondary: #10b981;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --light-gray: #e2e8f0;
+            --dark: #0f172a;
+            --light: #f1f5f9;
+            --gray: #94a8c4;
+            --light-gray: #1e293b;
+            --card-bg: #1e293b;
+            --section-bg: #0f172a;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
+            color: var(--gray);
+            background-color: var(--dark);
         }
 
         .container {
@@ -41,7 +58,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--light-gray);
             z-index: 1000;
@@ -68,7 +85,7 @@
 
         .nav-links a {
             text-decoration: none;
-            color: var(--dark);
+            color: var(--gray);
             font-weight: 500;
             transition: color 0.3s ease;
         }
@@ -81,12 +98,13 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: var(--gray);
         }
 
         /* Hero Section */
         .hero {
             padding: 160px 0 100px;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             position: relative;
             overflow: hidden;
         }
@@ -103,6 +121,7 @@
             font-weight: 800;
             margin-bottom: 20px;
             line-height: 1.2;
+            color: white;
         }
 
         .hero-text h1 span {
@@ -133,7 +152,15 @@
             color: white;
             font-size: 6rem;
             font-weight: bold;
-            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.3);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+            overflow: hidden;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
         }
 
         .btn {
@@ -149,13 +176,13 @@
         .btn-primary {
             background: var(--primary);
             color: white;
-            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
         }
 
         .btn-primary:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
         }
 
         .btn-outline {
@@ -184,6 +211,7 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 15px;
+            color: white;
         }
 
         .section-title .divider {
@@ -207,6 +235,20 @@
             color: var(--gray);
         }
 
+        .personal-message {
+            background: linear-gradient(135deg, var(--card-bg) 0%, var(--light-gray) 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .personal-message p {
+            font-style: italic;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+
         /* Skills Section */
         .skills-grid {
             display: grid;
@@ -215,11 +257,12 @@
         }
 
         .skill-card {
-            background: white;
+            background: var(--card-bg);
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
+            border: 1px solid var(--light-gray);
         }
 
         .skill-card:hover {
@@ -235,6 +278,7 @@
         .skill-info h3 {
             font-size: 1.3rem;
             margin-bottom: 10px;
+            color: white;
         }
 
         .skill-bar {
@@ -260,11 +304,12 @@
         }
 
         .project-card {
-            background: white;
+            background: var(--card-bg);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
+            border: 1px solid var(--light-gray);
         }
 
         .project-card:hover {
@@ -290,6 +335,7 @@
         .project-info h3 {
             font-size: 1.3rem;
             margin-bottom: 10px;
+            color: white;
         }
 
         .project-info p {
@@ -310,50 +356,35 @@
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
+            color: var(--gray);
         }
 
         /* Contact Section */
         .contact-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 50px;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .contact-info h3 {
             font-size: 1.5rem;
             margin-bottom: 20px;
-        }
-
-        .contact-details {
-            margin-bottom: 30px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
             color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
+            text-align: center;
         }
 
         .social-links {
             display: flex;
-            gap: 15px;
+            gap: 25px;
+            justify-content: center;
+            margin-top: 30px;
         }
 
         .social-link {
-            width: 45px;
-            height: 45px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             background: var(--light-gray);
             display: flex;
@@ -362,49 +393,26 @@
             color: var(--primary);
             text-decoration: none;
             transition: all 0.3s ease;
+            font-size: 1.5rem;
         }
 
         .social-link:hover {
             background: var(--primary);
             color: white;
-            transform: translateY(-3px);
-        }
-
-        .contact-form .form-group {
-            margin-bottom: 20px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid var(--light-gray);
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .contact-form textarea {
-            height: 150px;
-            resize: vertical;
+            transform: translateY(-5px);
         }
 
         /* Footer */
         footer {
-            background: var(--dark);
-            color: white;
+            background: var(--section-bg);
+            color: var(--gray);
             padding: 40px 0;
             text-align: center;
+            border-top: 1px solid var(--light-gray);
         }
 
         footer p {
-            color: #94a3b8;
+            color: var(--gray);
         }
 
         /* Responsive Design */
@@ -419,10 +427,10 @@
                 top: 80px;
                 left: 0;
                 width: 100%;
-                background: white;
+                background: var(--dark);
                 flex-direction: column;
                 padding: 20px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             }
 
             .nav-links.active {
@@ -430,8 +438,7 @@
             }
 
             .hero-content,
-            .about-content,
-            .contact-container {
+            .about-content {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
@@ -457,7 +464,7 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">AlexDev</a>
+                <a href="#" class="logo">Jestyrn</a>
                 <div class="menu-toggle" id="menuToggle">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -476,15 +483,17 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Привет! Я <span>Алексей</span><br>Frontend разработчик</h1>
-                    <p>Создаю современные, адаптивные и быстрые веб-приложения с использованием последних технологий и лучших практик разработки.</p>
+                    <h1>Привет! Я <span>Jestyrn</span><br>Full-stack разработчик</h1>
+                    <p>Создаю десктопные приложения, серверные скрипты, телеграм-ботов и веб-сайты с использованием современных технологий.</p>
                     <div class="btn-group">
                         <a href="#projects" class="btn btn-primary">Мои проекты</a>
                         <a href="#contact" class="btn btn-outline">Связаться</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="profile-img">AI</div>
+                    <div class="profile-img">
+                        <img src="https://github.com/Jestyrn/mowech/blob/main/inpng.png?raw=true" alt="Jestyrn Avatar">
+                    </div>
                 </div>
             </div>
         </div>
@@ -499,19 +508,23 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Я passionate frontend разработчик с 4-летним опытом создания веб-приложений. Моя специализация — React и современный JavaScript, но я также хорошо разбираюсь в полном стеке разработки.</p>
-                    <p>Люблю решать сложные задачи, создавать интуитивно понятные интерфейсы и постоянно учиться новому. В свободное время участвую в open-source проектах и пишу технические статьи.</p>
-                    <p>Мои работы сочетают в себе функциональность, производительность и эстетику. Я верю, что хороший код должен быть не только рабочим, но и красивым.</p>
+                    <p>Я занимаюсь разработкой уже 4 года, специализируюсь на создании различных типов программного обеспечения: от десктопных приложений на WPF и WinForms до серверных скриптов, телеграм-ботов и веб-сайтов.</p>
+                    <p>Имею глубокие знания в работе с базами данных (PostgreSQL, SQLite), контейнеризацией (Docker), системами контроля версий (Git) и современными подходами к веб-разработке (HTML, CSS).</p>
+                    <p>Как пользователь Arch Linux, я ценю стабильность, производительность и гибкость в решениях. Каждый мой проект — это результат тщательного планирования и профессионального подхода.</p>
+                    
+                    <div class="personal-message">
+                        <p>Моя девушка болеет, я бы хотел пожелать скорейшего выздоровления. Её кстати зовут Катюша ❤️</p>
+                    </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://placehold.co/400x500/e2e8f0/64748b?text=About+Me" alt="About me" style="width: 100%; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                    <img src="https://github.com/Jestyrn/mowech/blob/main/inpng.png?raw=true" alt="Jestyrn" style="width: 100%; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" style="background: #f1f5f9;">
+    <section id="skills" style="background: var(--section-bg);">
         <div class="container">
             <div class="section-title">
                 <h2>Навыки</h2>
@@ -520,37 +533,13 @@
             <div class="skills-grid">
                 <div class="skill-card">
                     <div class="skill-icon">
-                        <i class="fab fa-react"></i>
+                        <i class="fab fa-microsoft"></i>
                     </div>
                     <div class="skill-info">
-                        <h3>React & Next.js</h3>
-                        <p>Создание современных SPA и SSR приложений</p>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <div class="skill-info">
-                        <h3>JavaScript/TypeScript</h3>
-                        <p>Чистый, поддерживаемый и эффективный код</p>
+                        <h3>C# & .NET</h3>
+                        <p>Разработка десктопных, серверных и бот-приложений</p>
                         <div class="skill-bar">
                             <div class="skill-progress" style="width: 95%;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <div class="skill-info">
-                        <h3>UI/UX Design</h3>
-                        <p>Создание интуитивных и красивых интерфейсов</p>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%;"></div>
                         </div>
                     </div>
                 </div>
@@ -559,10 +548,34 @@
                         <i class="fas fa-database"></i>
                     </div>
                     <div class="skill-info">
-                        <h3>Node.js & MongoDB</h3>
-                        <p>Backend разработка и работа с базами данных</p>
+                        <h3>Базы данных</h3>
+                        <p>PostgreSQL, SQLite, оптимизация запросов и проектирование БД</p>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 75%;"></div>
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-docker"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h3>Docker & Git</h3>
+                        <p>Контейнеризация приложений и управление версиями кода</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h3>HTML & CSS</h3>
+                        <p>Современная веб-разметка и стилизация интерфейсов</p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
                         </div>
                     </div>
                 </div>
@@ -579,49 +592,45 @@
             </div>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-img">E-Commerce</div>
+                    <div class="project-img">StalCraft</div>
                     <div class="project-info">
-                        <h3>Платформа электронной коммерции</h3>
-                        <p>Полнофункциональная платформа для онлайн-торговли с системой платежей и админкой.</p>
+                        <h3>Автоматический трейдер для StalCraft</h3>
+                        <p>Система автоматизации торговли в игре StalCraft с возможностью мониторинга рынка и автоматической покупки/продажи товаров.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Stripe</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">Tesseract</span>
+                            <span class="tech-tag">SQLite</span>
                         </div>
-                        <a href="#" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">
-                            <i class="fas fa-external-link-alt"></i> Посмотреть
-                        </a>
+                        <p><strong>Технологии:</strong> OpenCV для анализа игрового изображения, Tesseract OCR для распознавания текста, SQLite для хранения истории покупок и данных о отслеживаемых лотах.</p>
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-img">Task App</div>
+                    <div class="project-img">Nesting</div>
                     <div class="project-info">
-                        <h3>Менеджер задач</h3>
-                        <p>Коллаборативное приложение для управления задачами с реальным временем обновлений.</p>
+                        <h3>Алгоритм вложенного раскроя</h3>
+                        <p>Сложная математическая система оптимизации раскроя материалов с использованием вычислительной геометрии.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Tailwind</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">Вычислительная геометрия</span>
+                            <span class="tech-tag">netDXF</span>
+                            <span class="tech-tag">Алгоритмы оптимизации</span>
                         </div>
-                        <a href="#" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">
-                            <i class="fas fa-external-link-alt"></i> Посмотреть
-                        </a>
+                        <p><strong>Реализация:</strong> Алгоритмы вычислительной геометрии для оптимального размещения полигонов на ограниченной площади, библиотека netDXF для работы с CAD-форматами, сложные математические модели упаковки.</p>
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-img">Weather</div>
+                    <div class="project-img">Parser</div>
                     <div class="project-info">
-                        <h3>Погодный дашборд</h3>
-                        <p>Красивый дашборд погоды с прогнозами и картами на основе местоположения.</p>
+                        <h3>Telegram-бот для Kaspi.kz</h3>
+                        <p>Высокопроизводительный парсер-бот для автоматического сбора и анализа данных с маркетплейса Kaspi.kz.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Weather API</span>
-                            <span class="tech-tag">Chart.js</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">Telegram Bot API</span>
+                            <span class="tech-tag">Web Scraping</span>
+                            <span class="tech-tag">Асинхронность</span>
                         </div>
-                        <a href="#" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">
-                            <i class="fas fa-external-link-alt"></i> Посмотреть
-                        </a>
+                        <p><strong>Особенности:</strong> Масштабируемая архитектура для обработки больших объемов данных, продвинутые техники веб-скрапинга, эффективное управление ресурсами и обработка ошибок.</p>
                     </div>
                 </div>
             </div>
@@ -629,7 +638,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" style="background: #f1f5f9;">
+    <section id="contact" style="background: var(--section-bg);">
         <div class="container">
             <div class="section-title">
                 <h2>Контакты</h2>
@@ -638,66 +647,17 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Свяжитесь со мной</h3>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4>Email</h4>
-                                <p>alex@example.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <h4>Телефон</h4>
-                                <p>+7 (999) 123-45-67</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h4>Локация</h4>
-                                <p>Москва, Россия</p>
-                            </div>
-                        </div>
-                    </div>
                     <div class="social-links">
-                        <a href="#" class="social-link">
+                        <a href="https://github.com/Jestyrn" class="social-link">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link">
+                        <a href="https://t.me/Jestyrn" class="social-link">
                             <i class="fab fa-telegram"></i>
                         </a>
+                        <a href="https://kwork.ru/user/Jestyrn" class="social-link">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </a>
                     </div>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Ваше имя" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Ваш email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Тема сообщения">
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Ваше сообщение" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить сообщение</button>
-                    </form>
                 </div>
             </div>
         </div>
@@ -706,7 +666,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Алексей Иванов. Все права защищены.</p>
+            <p>&copy; 2024 Jestyrn. Все права защищены.</p>
         </div>
     </footer>
 
@@ -737,3 +697,12 @@
     </script>
 </body>
 </html>
+
+
+    
+              <script>
+                              
+              </script>
+                        </body>
+                        </html>
+                    
