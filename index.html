@@ -1,11 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="ru">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  
-  <body>
-    Тут будет сайт : )
-  </body>
+    <title>Калькулятор загрузки фуры</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Калькулятор загрузки подоконников</h1>
+
+<div class="controls">
+    <fieldset>
+        <legend>Кузов</legend>
+        <label>Ширина (мм):
+            <input type="number" id="truckWidth" value="2400">
+        </label>
+        <label>Высота (мм):
+            <input type="number" id="truckHeight" value="2600">
+        </label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Подоконник</legend>
+        <label>Ширина (мм):
+            <input type="number" id="itemWidth" value="200">
+        </label>
+        <label>Высота (мм):
+            <input type="number" id="itemHeight" value="100">
+        </label>
+        <label>Количество:
+            <input type="number" id="itemCount" value="20">
+        </label>
+    </fieldset>
+
+    <button onclick="calculate()">Рассчитать</button>
+</div>
+
+<h2>Результат</h2>
+
+<div class="stats" id="stats"></div>
+
+<div class="canvas-wrapper">
+    <canvas id="canvas" width="480" height="520"></canvas>
+</div>
+
+<script src="script.js"></script>
+</body>
 </html>
